@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+//import { ToastController } from "@ionic/angular";
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +8,19 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  constructor(){}
+  /*constructor(public toastController: ToastController) {}
 
+  async openToast(){
+    const toast = await this.toastController.create({
+      message: 'Welcome to HeartStoneApp',
+      duration: 2000
+    });
+    toast.present();
+  }*/
+  Exit(){
+    if(window.confirm("Do you want to exit the app?")){
+      navigator["app"].exitApp();
+    }
+  }
 }
