@@ -12,7 +12,8 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../card-decks/card-decks.module#CardDecksPageModule'
+            loadChildren: () =>
+              import('../card-decks/card-decks.module').then(m => m.CardDecksPageModule)
           }
         ]
       },
@@ -21,7 +22,8 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../about/about.module#AboutPageModule'
+            loadChildren: () =>
+              import('../about/about.module').then(m => m.AboutPageModule)
           }
         ]
       },
